@@ -137,7 +137,7 @@ export const projects: Project[] = [
 export const otherWork = [
   {
     name: "meshsearch",
-    note: "Private web search for AI agents, shipped as an MCP server with x402 payments. Team project; I owned the zero-knowledge proof layer that commits queries client-side.",
+    note: "Private web search for AI agents, shipped as an MCP server with x402 payments. Team project.",
   },
   {
     name: "passit",
