@@ -7,17 +7,25 @@ npm install
 npm run dev
 ```
 
-All the copy lives in `src/lib/content.ts`. Project screenshots go in `public/projects/`
-and are referenced from the `shots` array on each project.
+All the copy lives in `src/lib/content.ts`. Screenshots go in `public/projects/` and event
+photos in `public/hackathons/`, named `<slug>-<what>.png`, and are referenced from the `shots` array.
+
+- Personal project: add it to `projects`.
+- Hackathon: add it to `hackathons`, add the project built there to `hackathonProjects`, and set
+  `project` / `hackathon` to each other's slug. The two pages link to each other from that.
 
 ## Layout
 
 ```
 src/
-  app/            layout, page, global styles
+  app/            layout (header, footer), home, global styles
+    projects/     list + [slug] detail
+    hackathons/   list + [slug] detail
   components/
     sections/     one file per section on the page
     ui/           shadcn primitives (badge, button, dialog)
+    project-row   list entry for a project
+    shots         screenshot figures
     prompt.tsx    the typed shell prompt used as section headings
     reveal.tsx    fade-in on scroll
   hooks/          use-in-view

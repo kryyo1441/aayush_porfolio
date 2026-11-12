@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { JetBrains_Mono } from "next/font/google"
 
+import { SiteHeader } from "@/components/site-header"
+
 import "./globals.css"
 
 const mono = JetBrains_Mono({
@@ -26,7 +28,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <noscript>
           <style>{`.reveal { opacity: 1; transform: none; } .prompt-rest { display: inline; }`}</style>
         </noscript>
-        {children}
+        <SiteHeader />
+        <main className="mx-auto w-full max-w-4xl px-5">{children}</main>
+        <footer className="border-t border-border/60">
+          <div className="mx-auto flex max-w-4xl justify-between px-5 py-6 text-[14px] text-dim">
+            <span>© 2026 aayush nair</span>
+            <span>next.js · shadcn/ui</span>
+          </div>
+        </footer>
       </body>
     </html>
   )
