@@ -74,7 +74,7 @@ export const projects: Project[] = [
     live: "https://aether-vault-pi.vercel.app",
     shots: [
       {
-        src: "/projects/aether-vault/ballot.gif",
+        src: "/projects/personal-projects/aether-vault/ballot.gif",
         alt: "Casting a ballot end to end: one-time code login, credential issuance, proof generation, receipt",
         width: 854,
         height: 480,
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     repo: gh("cascade-reserve"),
     shots: [
       {
-        src: "/projects/cascade-reserve/dashboard.jpg",
+        src: "/projects/personal-projects/cascade-reserve/dashboard.jpg",
         alt: "Read-only dashboard showing L1/L2 note balances, pool composition, vaults and the repo market",
         width: 1568,
         height: 775,
@@ -116,13 +116,13 @@ export const projects: Project[] = [
     repo: gh("mailshield"),
     shots: [
       {
-        src: "/projects/mailshield/scan.png",
+        src: "/projects/personal-projects/mailshield/scan.png",
         alt: "Scan overview with session counts, findings by severity and a per-session triage table",
         width: 1917,
         height: 991,
       },
       {
-        src: "/projects/mailshield/upload.png",
+        src: "/projects/personal-projects/mailshield/upload.png",
         alt: "Upload screen asking for a .pcap file",
         width: 1911,
         height: 992,
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     repo: gh("vasptrace"),
     shots: [
       {
-        src: "/projects/vasptrace/graph.png",
+        src: "/projects/personal-projects/vasptrace/graph.png",
         alt: "Case page with a trace graph of 60 addresses and typology flags for fan-out and peel chain",
         width: 1917,
         height: 948,
@@ -217,19 +217,19 @@ export const hackathonProjects: Project[] = [
     repo: gh("attendance-tracking-system"),
     shots: [
       {
-        src: "/projects/technothon-trackmate/hero.png",
+        src: "/projects/hackathon-projects/technothon-trackmate/hero.png",
         alt: "landing page",
         width: 248,
         height: 519,
       },
       {
-        src: "/projects/technothon-trackmate/student.png",
+        src: "/projects/hackathon-projects/technothon-trackmate/student.png",
         alt: "student view",
         width: 246,
         height: 516,
       },
       {
-        src: "/projects/technothon-trackmate/teacher.png",
+        src: "/projects/hackathon-projects/technothon-trackmate/teacher.png",
         alt: "teacher view",
         width: 249,
         height: 518,
