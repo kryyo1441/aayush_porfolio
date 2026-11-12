@@ -1,23 +1,58 @@
+"use client"
+
 import Image from "next/image"
 
 import type { Shot } from "@/lib/content"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
 
 function Figure({ shot, className, sizes }: { shot: Shot; className?: string; sizes: string }) {
+  // phone shots are ~250px already, resizing them only makes them soft
+  const unoptimized = shot.src.endsWith(".gif") || shot.width < 300
+
   return (
-    <figure className="space-y-2">
-      <Image
-        src={shot.src}
-        alt={shot.alt}
-        width={shot.width}
-        height={shot.height}
-        sizes={sizes}
-        // phone shots are ~250px already, resizing them only makes them soft
-        unoptimized={shot.src.endsWith(".gif") || shot.width < 300}
-        className={cn("w-full rounded-md border border-border", className)}
-      />
-      <figcaption className="text-[14px] text-muted-foreground">{shot.alt}</figcaption>
-    </figure>
+    <Dialog>
+      <figure className="space-y-2">
+        <DialogTrigger className="block w-full cursor-zoom-in">
+          <Image
+            src={shot.src}
+            alt={shot.alt}
+            width={shot.width}
+            height={shot.height}
+            sizes={sizes}
+            unoptimized={unoptimized}
+            className={cn("w-full rounded-md border border-border transition-colors hover:border-term/60", className)}
+          />
+        </DialogTrigger>
+        <figcaption className="text-xs text-muted-foreground">{shot.alt}</figcaption>
+      </figure>
+      <DialogContent className="max-h-[92vh] gap-4 overflow-y-auto p-5 sm:max-w-5xl">
+        <DialogHeader>
+          <DialogTitle className="text-sm">
+            <span className="text-dim">$ open </span>
+            {shot.src.split("/").slice(-2).join("/")}
+          </DialogTitle>
+          <DialogDescription className="text-sm">{shot.alt}</DialogDescription>
+        </DialogHeader>
+        <Image
+          src={shot.src}
+          alt={shot.alt}
+          width={shot.width}
+          height={shot.height}
+          sizes="(min-width: 1024px) 960px, 100vw"
+          unoptimized={unoptimized}
+          style={{ maxWidth: shot.width * 2 }}
+          className="mx-auto h-auto max-h-[70vh] w-auto max-w-full rounded-md border border-border object-contain"
+        />
+      </DialogContent>
+    </Dialog>
   )
 }
 
