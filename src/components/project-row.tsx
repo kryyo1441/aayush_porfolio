@@ -1,13 +1,15 @@
 import Link from "next/link"
 
-import type { Project } from "@/lib/content"
+import { hackathons, type Project } from "@/lib/content"
 import { Badge } from "@/components/ui/badge"
 
 export function ProjectRow({ project, index }: { project: Project; index: number }) {
+  const hackathon = hackathons.find((h) => h.slug === project.hackathon)
+
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group block border-l border-border pl-4 transition-colors hover:border-term/60"
+      className={`group block border-l pl-4 transition-colors hover:border-term/60 ${hackathon ? "border-term/40" : "border-border"}`}
     >
       <div className="flex items-baseline justify-between gap-4">
         <h3 className="flex items-center gap-2 text-[17px]">
@@ -22,6 +24,11 @@ export function ProjectRow({ project, index }: { project: Project; index: number
         <span className="text-[14px] text-dim">{project.year}</span>
       </div>
       <p className="mt-2 text-base">{project.summary}</p>
+      {hackathon && (
+        <p className="mt-2 text-[14px] text-term">
+          @ {hackathon.name} · {hackathon.result}
+        </p>
+      )}
       <p className="mt-2 text-[14px] text-dim">{project.stack.join(" · ")}</p>
     </Link>
   )
