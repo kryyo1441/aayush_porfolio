@@ -7,8 +7,9 @@ npm install
 npm run dev
 ```
 
-All the copy lives in `src/lib/content.ts`. Screenshots go in `public/projects/` and event
-photos in `public/hackathons/`, named `<slug>-<what>.png`, and are referenced from the `shots` array.
+All the copy lives in `src/lib/content.ts`. Each project and hackathon gets its own folder named
+after its slug: screenshots in `public/projects/<slug>/`, event photos in `public/hackathons/<slug>/`.
+They're referenced from the `shots` array. A hackathon project is slugged `<hackathon>-<name>`.
 
 - Personal project: add it to `projects`.
 - Hackathon: add it to `hackathons`, add the project built there to `hackathonProjects`, and set

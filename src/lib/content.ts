@@ -74,7 +74,7 @@ export const projects: Project[] = [
     live: "https://aether-vault-pi.vercel.app",
     shots: [
       {
-        src: "/projects/aether-vault-ballot.gif",
+        src: "/projects/aether-vault/ballot.gif",
         alt: "Casting a ballot end to end: one-time code login, credential issuance, proof generation, receipt",
         width: 854,
         height: 480,
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     repo: gh("cascade-reserve"),
     shots: [
       {
-        src: "/projects/cascade-reserve-dashboard.jpg",
+        src: "/projects/cascade-reserve/dashboard.jpg",
         alt: "Read-only dashboard showing L1/L2 note balances, pool composition, vaults and the repo market",
         width: 1568,
         height: 775,
@@ -116,13 +116,13 @@ export const projects: Project[] = [
     repo: gh("mailshield"),
     shots: [
       {
-        src: "/projects/mailshield-scan.png",
+        src: "/projects/mailshield/scan.png",
         alt: "Scan overview with session counts, findings by severity and a per-session triage table",
         width: 1917,
         height: 991,
       },
       {
-        src: "/projects/mailshield-upload.png",
+        src: "/projects/mailshield/upload.png",
         alt: "Upload screen asking for a .pcap file",
         width: 1911,
         height: 992,
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     repo: gh("vasptrace"),
     shots: [
       {
-        src: "/projects/vasptrace-graph.png",
+        src: "/projects/vasptrace/graph.png",
         alt: "Case page with a trace graph of 60 addresses and typology flags for fan-out and peel chain",
         width: 1917,
         height: 948,
@@ -155,7 +155,7 @@ export const projects: Project[] = [
 
 export const hackathons: Hackathon[] = [
   {
-    slug: "technothon-2k24",
+    slug: "technothon",
     name: "technothon 2k24",
     date: "17 feb 2024",
     venue: "Vivekanand Education Society's Polytechnic, Mumbai",
@@ -178,35 +178,35 @@ export const hackathons: Hackathon[] = [
     ],
     shots: [
       {
-        src: "/hackathons/technothon-2k24-winning.png",
+        src: "/hackathons/technothon/winning.png",
         alt: "collecting the winner's cheque",
         width: 922,
         height: 520,
       },
       {
-        src: "/hackathons/technothon-2k24-audience.png",
+        src: "/hackathons/technothon/audience.png",
         alt: "the hall during presentations",
         width: 693,
         height: 519,
       },
       {
-        src: "/hackathons/technothon-2k24-lunch.png",
+        src: "/hackathons/technothon/lunch.png",
         alt: "lunch",
         width: 391,
         height: 518,
       },
     ],
-    project: "trackmate",
+    project: "technothon-trackmate",
   },
 ]
 
 export const hackathonProjects: Project[] = [
   {
-    slug: "trackmate",
+    slug: "technothon-trackmate",
     name: "trackmate",
     year: "2024",
     tag: "team",
-    hackathon: "technothon-2k24",
+    hackathon: "technothon",
     summary: "Attendance where the teacher generates a QR code for each session and students scan it to check in.",
     details: [
       "A QR code is generated for every attendance session the teacher starts, and students mark themselves present by scanning it.",
@@ -217,19 +217,19 @@ export const hackathonProjects: Project[] = [
     repo: gh("attendance-tracking-system"),
     shots: [
       {
-        src: "/projects/trackmate-hero.png",
+        src: "/projects/technothon-trackmate/hero.png",
         alt: "landing page",
         width: 248,
         height: 519,
       },
       {
-        src: "/projects/trackmate-student.png",
+        src: "/projects/technothon-trackmate/student.png",
         alt: "student view",
         width: 246,
         height: 516,
       },
       {
-        src: "/projects/trackmate-teacher.png",
+        src: "/projects/technothon-trackmate/teacher.png",
         alt: "teacher view",
         width: 249,
         height: 518,
