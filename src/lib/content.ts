@@ -15,7 +15,26 @@ export type Project = {
   stack: string[]
   repo: string
   live?: string
+  /** slug of the hackathon it was built at; no value means a personal project */
+  hackathon?: string
   shots: Shot[]
+}
+
+export type Hackathon = {
+  slug: string
+  name: string
+  date: string
+  venue: string
+  result: string
+  duration: string
+  team: string
+  summary: string
+  about: string[]
+  built: string[]
+  experience: string[]
+  shots: Shot[]
+  /** slug of the project built there */
+  project: string
 }
 
 export type Role = {
@@ -134,6 +153,91 @@ export const projects: Project[] = [
   },
 ]
 
+export const hackathons: Hackathon[] = [
+  {
+    slug: "technothon-2k24",
+    name: "technothon 2k24",
+    date: "17 feb 2024",
+    venue: "Vivekanand Education Society's Polytechnic, Mumbai",
+    result: "1st",
+    duration: "24 hours",
+    team: "4 members",
+    summary:
+      "A 24-hour diploma hackathon about solving real-world problems. Our team built an attendance tracker around QR codes.",
+    about: [
+      "A 24-hour hackathon for diploma students, hosted by Vivekanand Education Society's Polytechnic in Mumbai on 17 February 2024.",
+      "The brief was open: build something that solves a real-world problem.",
+    ],
+    built: [
+      "Our team of four built trackmate, an attendance tracker for classrooms. The teacher starts a session and a QR code is generated for it, and students scan it to mark themselves present.",
+      "Location is only used to check a student is in the vicinity of the class, not tracked live. Teachers get attendance sheets for any date range and a defaulter list, and students see their own percentage.",
+    ],
+    experience: [
+      "My first hackathon. I was pretty intimidated going in, but that wore off once I started talking the project through with my teammates.",
+      "We picked a Svelte-based stack.",
+    ],
+    shots: [
+      {
+        src: "/hackathons/technothon-2k24-winning.png",
+        alt: "collecting the winner's cheque",
+        width: 922,
+        height: 520,
+      },
+      {
+        src: "/hackathons/technothon-2k24-audience.png",
+        alt: "the hall during presentations",
+        width: 693,
+        height: 519,
+      },
+      {
+        src: "/hackathons/technothon-2k24-lunch.png",
+        alt: "lunch",
+        width: 391,
+        height: 518,
+      },
+    ],
+    project: "trackmate",
+  },
+]
+
+export const hackathonProjects: Project[] = [
+  {
+    slug: "trackmate",
+    name: "trackmate",
+    year: "2024",
+    tag: "team",
+    hackathon: "technothon-2k24",
+    summary: "Attendance where the teacher generates a QR code for each session and students scan it to check in.",
+    details: [
+      "A QR code is generated for every attendance session the teacher starts, and students mark themselves present by scanning it.",
+      "Location is only used to confirm a student is near the class. It isn't tracked in real time.",
+      "Students see their attendance percentage per subject, flagged as a defaulter when it's too low. Teachers get attendance sheets for any date range and can generate a defaulter sheet.",
+    ],
+    stack: ["svelte"],
+    repo: gh("attendance-tracking-system"),
+    shots: [
+      {
+        src: "/projects/trackmate-hero.png",
+        alt: "landing page",
+        width: 248,
+        height: 519,
+      },
+      {
+        src: "/projects/trackmate-student.png",
+        alt: "student view",
+        width: 246,
+        height: 516,
+      },
+      {
+        src: "/projects/trackmate-teacher.png",
+        alt: "teacher view",
+        width: 249,
+        height: 518,
+      },
+    ],
+  },
+]
+
 export const otherWork = [
   {
     name: "meshsearch",
@@ -173,3 +277,5 @@ export const stack = {
   data: ["postgres", "prisma"],
   crypto: ["nizk", "foundry", "erc-4626"],
 }
+
+export const allProjects = [...projects, ...hackathonProjects]
