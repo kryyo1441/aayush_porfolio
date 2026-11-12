@@ -11,10 +11,10 @@ export function Contact() {
   return (
     <section id="contact" className="pt-12 pb-20">
       <Prompt command="echo $CONTACT">
-        <p className="text-sm leading-relaxed text-foreground/90">
+        <p className="text-base leading-relaxed text-foreground/90">
           I&apos;m looking for full stack roles. Email is the quickest way to reach me.
         </p>
-        <ul className="mt-6 space-y-2 text-[13px]">
+        <ul className="mt-6 space-y-2 text-[15px]">
           {rows.map((row) => (
             <li key={row.label} className="flex gap-4">
               <span className="w-20 shrink-0 text-dim">{row.label}</span>

@@ -5,7 +5,7 @@ export function Stack() {
   return (
     <section className="py-12">
       <Prompt command="cat stack.toml">
-        <pre className="overflow-x-auto rounded-md border border-border bg-card px-4 py-3 text-[13px] leading-6">
+        <pre className="overflow-x-auto rounded-md border border-border bg-card px-4 py-3 text-[15px] leading-6">
           {Object.entries(stack).map(([group, items]) => (
             <code key={group} className="block">
               <span className="text-dim">{group.padEnd(10)}</span>

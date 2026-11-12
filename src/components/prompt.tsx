@@ -41,7 +41,7 @@ export function Prompt({
 
   return (
     <div ref={ref} className={className}>
-      <p className="text-sm">
+      <p className="text-base">
         <span className="sr-only">{`${path} $ ${command}`}</span>
         <span aria-hidden>
           <span className="text-term">aayush</span>

@@ -6,11 +6,11 @@ export function Intro() {
     <section id="top" className="pt-16 pb-10 sm:pt-24">
       <Prompt command="whoami" speed={110}>
         <h1 className="text-2xl tracking-tight sm:text-3xl">{profile.name}</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
+        <p className="mt-1 text-base text-muted-foreground">
           {profile.role} <span className="text-dim">·</span> {profile.location.toLowerCase()}
         </p>
 
-        <div className="mt-8 space-y-4 text-sm leading-relaxed text-foreground/90">
+        <div className="mt-8 max-w-2xl space-y-4 text-base leading-relaxed text-foreground/90">
           <p>
             I&apos;m a third-year IT student at Pillai College of Engineering, Panvel. Most of what I
             build is Next.js on top of Postgres and Prisma, and I care about the boring parts: schemas,
@@ -26,7 +26,7 @@ export function Intro() {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-x-5 gap-y-1 text-[13px]">
+        <div className="mt-8 flex flex-wrap gap-x-5 gap-y-1 text-[15px]">
           <a href={profile.github} target="_blank" rel="noreferrer" className="text-term underline-offset-4 hover:underline">
             github ↗
           </a>
